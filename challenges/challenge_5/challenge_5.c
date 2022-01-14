@@ -2,7 +2,8 @@
  * The aim is to execute the function complete_level by modifying the
  * saved return address, and pointing it to the complete_level() function.
  *
- * You will note PIE is disabled..
+ * ASLR is enabled on this system so you should take a look at the page memory offset values..
+ * and this time PIE is enabled! Good luck.
  */
 
 #include <err.h>
@@ -12,12 +13,12 @@
 #include <unistd.h>
 
 #define BANNER \
-  "Welcome to Challenge 4"
+  "Welcome to Challenge 5"
 
 char *gets(char *);
 
 void complete_level() {
-  printf("Congratulations, you've finished Challenge 4 :-) Well done!\n");
+  printf("Congratulations, you've finished Challenge 5 :-) Well done!\n");
   exit(0);
 }
 
