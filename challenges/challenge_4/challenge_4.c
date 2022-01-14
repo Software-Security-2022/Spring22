@@ -1,6 +1,8 @@
 /*
  * The aim is to execute the function complete_level by modifying the
  * saved return address, and pointing it to the complete_level() function.
+ *
+ * ASLR is enabled on this system so you should take a look at the page memory offset values..
  */
 
 #include <err.h>
