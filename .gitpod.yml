@@ -1,7 +1,7 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+  - init: echo 'install helpful python libraries' # configure environment
+    command: pip3 install pwntools
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
