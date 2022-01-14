@@ -1,5 +1,5 @@
 /*
- * The aim is to change the contents of the changeme variable to 0x496c5962
+ * The aim is to change the contents of the changeme variable to anything other than 0.
  */
 
 #include <stdio.h>

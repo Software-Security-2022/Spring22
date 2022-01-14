@@ -2,7 +2,8 @@
  * The aim is to execute the function complete_level by modifying the
  * saved return address, and pointing it to the complete_level() function.
  *
- * You will note PIE is disabled..
+ * ASLR is enabled on this system so you should take a look at the page memory offset values..
+ * and this time PIE is enabled! Good luck.
  */
 
 #include <err.h>

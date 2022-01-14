@@ -1,5 +1,8 @@
 /*
- * The aim is to change the contents of the changeme variable to 0x0d0a090a
+ * The aim is to execute the function complete_level by modifying the
+ * saved return address, and pointing it to the complete_level() function.
+ *
+ * You will note PIE is disabled..
  */
 
 #include <err.h>
@@ -18,24 +21,18 @@ void complete_level() {
   exit(0);
 }
 
+void start_level() {
+  char buffer[64];
+  void *ret;
+
+  // read up to 100 bytes into the buffer of size 64 <- uhh..?
+  read(0, buffer, 100);
+
+  ret = __builtin_return_address(0);
+  printf("and will be returning to %p\n", ret);
+}
+
 int main(int argc, char **argv) {
-  struct {
-    char buffer[64];
-    volatile int (*fp)();
-  } locals;
-
   printf("%s\n", BANNER);
-
-  locals.fp = NULL;
-  gets(locals.buffer);
-
-  if (locals.fp) {
-    printf("calling function pointer @ %p\n", locals.fp);
-    fflush(stdout);
-    locals.fp();
-  } else {
-    printf("function pointer remains unmodified :~( better luck next time!\n");
-  }
-
-  exit(0);
+  start_level();
 }
