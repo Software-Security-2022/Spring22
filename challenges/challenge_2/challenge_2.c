@@ -1,3 +1,7 @@
+/*
+ * The aim is to change the contents of the changeme variable to 0x0d0a090a
+ */
+
 #include <err.h>
 #include <stdio.h>
 #include <stdlib.h>
