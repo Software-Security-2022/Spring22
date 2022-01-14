@@ -1,3 +1,5 @@
+This is YOUR workspace environment. You can alter anything here without consequence, good luck!
+
 Challenges are located in challenges/
 
 Each challenge folder contains a Makefile which can be used to re-build the challenge binary. Running `make` will execute the re-build and allow you to inspect the various compiler warnings.
